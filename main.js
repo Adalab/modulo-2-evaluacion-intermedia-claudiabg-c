@@ -19,7 +19,7 @@ function humanChoice() {
         console.log('El humano escogió piedra');
     } else if (userChoice === '2') {
         console.log('El humano escogió papel');
-    } else {
+    } else if (userChoice === '3'){
         console.log('El humano escogió tijera');
     }
 }
@@ -69,7 +69,7 @@ function game() {
                 } else {
                 messageButton('¡Has perdido!');
                 addComputerScore();
-                }} else {
+                }} else if(chooseButton.value === '3'){
                     if(getRandomNumber(9) <= 3) {
                         messageButton('¡Has perdido!');
                         addComputerScore();
