@@ -55,26 +55,26 @@ function game() {
         if(getRandomNumber(9) <= 3) {
         messageButton('Empate');
         }else if(getRandomNumber(9) <=6) {
-        messageButton('Gana el ordenador');
+        messageButton('¡Has perdido!');
         addComputerScore();
         } else {
-        messageButton('Gana el humano');
+        messageButton('¡Has ganado!');
         addHumanScore();
         }} else if(chooseButton.value === '2') {
             if(getRandomNumber(9) <= 3) {
-                messageButton('Gana el humano');
+                messageButton('¡Has ganado!');
                 addHumanScore();
                 }else if(getRandomNumber(9) <=6) {
                 messageButton('Empate');
                 } else {
-                messageButton('Gana el ordenador');
+                messageButton('¡Has perdido!');
                 addComputerScore();
                 }} else {
                     if(getRandomNumber(9) <= 3) {
-                        messageButton('Gana el ordenador');
+                        messageButton('¡Has perdido!');
                         addComputerScore();
                         }else if(getRandomNumber(9) <=6) {
-                        messageButton('Gana el humano');
+                        messageButton('¡Has ganado!');
                         addHumanScore();
                         } else {
                         messageButton('Empate');
@@ -82,6 +82,8 @@ function game() {
                 }
 
 }
+
+
 
 function makeYourChoice(event) {
     event.preventDefault();    
