@@ -84,7 +84,6 @@ function game() {
 }
 
 
-
 function makeYourChoice(event) {
     event.preventDefault();    
     computerChoice();
