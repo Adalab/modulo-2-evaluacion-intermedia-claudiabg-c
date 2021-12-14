@@ -60,29 +60,30 @@ function game() {
         } else {
         messageButton('¡Has ganado!');
         addHumanScore();
-        }} else if(chooseButton.value === '2') {
-            if(getRandomNumber(9) <= 3) {
-                messageButton('¡Has ganado!');
-                addHumanScore();
-                }else if(getRandomNumber(9) <=6) {
-                messageButton('Empate');
-                } else {
-                messageButton('¡Has perdido!');
-                addComputerScore();
-                }} else if(chooseButton.value === '3'){
-                    if(getRandomNumber(9) <= 3) {
-                        messageButton('¡Has perdido!');
-                        addComputerScore();
-                        }else if(getRandomNumber(9) <=6) {
-                        messageButton('¡Has ganado!');
-                        addHumanScore();
-                        } else {
-                        messageButton('Empate');
-                        }  
-                }
+        }
+    } else if(chooseButton.value === '2') {
+        if(getRandomNumber(9) <= 3) {
+        messageButton('¡Has ganado!');
+        addHumanScore();
+        }else if(getRandomNumber(9) <=6) {
+        messageButton('Empate');
+        } else {
+        messageButton('¡Has perdido!');
+        addComputerScore();
+        }
+    } else if(chooseButton.value === '3'){
+        if(getRandomNumber(9) <= 3) {
+        messageButton('¡Has perdido!');
+        addComputerScore();
+        }else if(getRandomNumber(9) <=6) {
+        messageButton('¡Has ganado!');
+        addHumanScore();
+        } else {
+        messageButton('Empate');
+        }  
+    }
 
 }
-
 
 function makeYourChoice(event) {
     event.preventDefault();    
@@ -91,4 +92,20 @@ function makeYourChoice(event) {
     game();
 }
 
+let numOfClicks = '';
+
+function clicks(event) {
+  if (event.currentTarget) {
+    numOfClicks++;
+  }
+}
+
+function startOver() {
+  if (numOfClicks > 10) {
+    location.reload();
+  }
+}
+
 playButton.addEventListener ('click', makeYourChoice);
+playButton.addEventListener('click', clicks);
+playButton.addEventListener('click', startOver);
