@@ -5,6 +5,7 @@ const playButton = document.querySelector('.play');
 const letsPlayMessage = document.querySelector('.letsplay');
 const humanScore = document.querySelector('.scorehuman');
 const computerScore = document.querySelector('.scorecomputer');
+const selectNoValue = document.querySelector('.none')
 
 function game() {
 
@@ -17,7 +18,9 @@ function game() {
     function humanChoice() {
         const userChoice = chooseButton.value;
 
-        if (userChoice === '1') {
+        if (userChoice === 'none') {
+            console.log('Selecciona una jugada para empezar');
+        } else if (userChoice === '1') {
             console.log('El humano escogió piedra');
         } else if (userChoice === '2') {
             console.log('El humano escogió papel');
@@ -27,7 +30,9 @@ function game() {
     }
 
     function computerChoice() {
-        if (randomNum <= 3) {
+        if (chooseButton.value === 'none') {
+            console.log('Selecciona una jugada para empezar');
+        } else if (randomNum <= 3) {
             console.log('El ordenador elige piedra');
         } else if (randomNum <= 6) {
             console.log('El ordenador elige papel')
@@ -103,6 +108,13 @@ function startOver() {
     }
 }
 
+function preventClickSelect() {
+    if (chooseButton.value === 'none') {
+        numOfClicks = '';
+    }
+}
+
+playButton.addEventListener('click', preventClickSelect)
 playButton.addEventListener('click', makeYourChoice);
 playButton.addEventListener('click', clicks);
 playButton.addEventListener('click', startOver);
