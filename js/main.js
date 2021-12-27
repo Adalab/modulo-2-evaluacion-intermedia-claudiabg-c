@@ -8,6 +8,9 @@ const computerScore = document.querySelector('.scorecomputer');
 const playAgain = document.querySelector('.playagain');
 const counter = document.querySelector('.counter');
 const scorePlays = document.querySelector('.scoreplays');
+const humanEmoji = document.querySelector('.humanemoji');
+const pcEmoji = document.querySelector('.pcemoji');
+const mainText = document.querySelector('.maintext');
 
 function hidePlay() {
     if (chooseButton.value !== 'none') {
@@ -31,21 +34,21 @@ function game() {
     function humanChoice() {
 
         if (userChoice === '1') {
-            console.log('El humano escogió piedra');
+            humanEmoji.innerHTML = '💎'
         } else if (userChoice === '2') {
-            console.log('El humano escogió papel');
+            humanEmoji.innerHTML = '📄'
         } else {
-            console.log('El humano escogió tijera');
+            humanEmoji.innerHTML = '✂️'
         }
     }
 
     function computerChoice() {
         if (randomNum <= 3) {
-            console.log('El ordenador elige piedra');
+            pcEmoji.innerHTML = '💎'
         } else if (randomNum <= 6) {
-            console.log('El ordenador elige papel')
+            pcEmoji.innerHTML = '📄'
         } else {
-            console.log('El ordenador elige tijera')
+            pcEmoji.innerHTML = '✂️'
         }
     };
 
@@ -112,13 +115,17 @@ function clicks(event) {
 
 function startOver() {
     if (numOfClicks > 10) {
-        playButton.classList.add('hidden')
-        playAgain.classList.remove('hidden')
+        playButton.classList.add('hidden');
+        mainText.classList.add('hidden');
+        chooseButton.classList.add('hidden');
+        humanEmoji.classList.add('hidden');
+        pcEmoji.classList.add('hidden');
+        playAgain.classList.remove('hidden');
 
         if (humanScore.innerHTML > computerScore.innerHTML) {
             letsPlayMessage.innerHTML = '¡Enhorabuena! ¡Has ganado al ordenador!'
         } else if (computerScore.innerHTML > humanScore.innerHTML) {
-            letsPlayMessage.innerHTML = 'Oh, vaya... El ordenador te ha ganado.'
+            letsPlayMessage.innerHTML = 'Oh, vaya... El ordenador te ha ganado'
         } else {
             letsPlayMessage.innerHTML = 'Habéis empatado'
         }

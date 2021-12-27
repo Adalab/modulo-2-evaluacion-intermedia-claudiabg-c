@@ -9,10 +9,10 @@
 }
 
 .main {
-  margin-top: 150px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   height: 100%;
   color: rgb(190, 34, 34);
-  padding: 5px 10px 5px;
   background: linear-gradient(to bottom, seashell, white);
   border-radius: 15px;
   display: flex;
@@ -26,12 +26,13 @@
 }
 
 .title {
-  margin: 50px 80px 80px;
+  font-size: 16px;
+  margin: 25px 40px 30px;
 }
 
 .maintext {
   font-weight: 600;
-  font-size: larger;
+  font-size: 12px;
 }
 
 .formplay {
@@ -46,11 +47,11 @@
   border-radius: 5px;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  font-size: medium;
+  font-size: 12px;
   appearance: none;
   cursor: pointer;
   text-align: center;
-  width: 150px;
+  width: 100px;
   border: 1px solid rgba(76, 94, 40, 0.671);
   background-color: rgba(106, 142, 35, 0.336);
   box-shadow: 2px 2px 5px rgba(44, 71, 44, 0.479);
@@ -61,7 +62,7 @@
 .playagain {
   margin: 20px;
   padding: 10px 20px 10px;
-  width: 150px;
+  width: 100px;
   border-radius: 5px;
   border: 1px solid rgba(76, 94, 40);
   background-color: rgba(76, 94, 40, 0.671);
@@ -70,22 +71,26 @@
   cursor: pointer;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
-  font-size: medium;
+  font-size: 12px;
 }
 
 .playagain {
-  width: 250px;
+  width: 150px;
 }
 
 .letsplay {
   padding-bottom: 30px;
+  font-size: 14px;
+  width: 250px;
 }
 
 .numberofplays {
   display: flex;
   width: 100%;
   justify-content: center;
-  padding-top: 20px;
+  padding-top: 10px;
+  padding-bottom: 50px;
+  font-size: 12px;
 }
 
 .scoreplays {
@@ -96,5 +101,52 @@
   display: flex;
   width: 30vh;
   justify-content: space-around;
-  padding-bottom: 50px;
+}
+
+.humansection,
+.pcsection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+}
+
+@media (min-width: 768px) {
+  .main {
+    margin-top: 150px;
+    margin-bottom: 150px;
+  }
+
+  .title {
+    font-size: 20px;
+    margin: 50px 80px 80px;
+  }
+
+  .letsplay {
+    font-size: 18px;
+    width: 100%;
+  }
+
+  .play,
+  .playagain,
+  .choosebutton,
+  .maintext,
+  .humansection,
+  .pcsection,
+  .numberofplays {
+    font-size: 16px;
+  }
+
+  .play,
+  .choosebutton {
+    width: 150px;
+  }
+
+  .playagain {
+    width: 250px;
+  }
 }
