@@ -15,6 +15,7 @@ const gifHapppy = document.querySelector('.gifhappy');
 const gifSad = document.querySelector('.gifsad');
 const gifTie = document.querySelector('.giftie');
 const body = document.querySelector('.body');
+const main = document.querySelector('.main');
 
 function hidePlay() {
     if (chooseButton.value !== 'none') {
@@ -149,17 +150,39 @@ const now = new Date();
 if (now.getMonth() === 11) {
     body.style.background = 'url(https://cdn.pixabay.com/photo/2015/12/06/20/10/christmas-bauble-1079926_960_720.jpg)';
     body.style.backgroundSize = 'cover';
+    body.style.color = '#B0B8CA'
+    main.style.background = 'linear-gradient(to bottom, #f7f8f3, white)';
+    chooseButton.style.border = '1px solid #B88975';
+    chooseButton.style.backgroundColor = '#b88975b9';
+    chooseButton.style.color = '#313847'
+    main.style.border = '3px solid #947257'
 } else if (now.getMonth() === 1) {
     body.style.background = 'url(https://cdn.pixabay.com/photo/2020/02/20/17/57/flower-4865379_960_720.png)';
     body.style.backgroundSize = 'cover';
-    body.style.color = 'rgb(252, 144, 211)';
+    body.style.color = '#E5A7B6';
+    main.style.background = 'white';
+    main.style.border = '3px solid #A4B89F'
+} else if (now.getMonth() === 2) {
+    body.style.background = 'url(https://cdn.pixabay.com/photo/2020/02/20/17/57/flower-4865379_960_720.png)';
+    body.style.backgroundSize = 'cover';
+    body.style.color = '#E5A7B6';
+    main.style.background = 'white';
+} else if (now.getMonth() === 3) {
+    body.style.background = 'url(https://cdn.pixabay.com/photo/2020/02/20/17/57/flower-4865379_960_720.png)';
+    body.style.backgroundSize = 'cover';
+    body.style.color = '#E5A7B6';
+    main.style.background = 'white';
 } else if (now.getMonth() === 6) {
     body.style.background = 'url(https://cdn.pixabay.com/photo/2021/07/10/01/11/monstera-6400359_960_720.jpg)';
     body.style.backgroundSize = 'cover';
-    body.style.color = 'lightgreen';
+    body.style.color = '#102D01';
+    main.style.background = 'linear-gradient(to bottom, #FFAAC0, #FEEFCC)';
+    main.style.border = '3px solid #315D03'
 } else {
-    body.style.background = 'linear-gradient(to bottom, pink, seashell)';
+    body.style.background = 'linear-gradient(to bottom, rgb(253, 214, 221), seashell)';
     body.style.color = 'rgb(252, 144, 211)';
+    main.style.background = 'linear-gradient(to bottom, seashell, rgb(253, 214, 221))';
+    main.style.border = '3px solid #A4B89F'
 }
 
 chooseButton.addEventListener('change', hidePlay)
