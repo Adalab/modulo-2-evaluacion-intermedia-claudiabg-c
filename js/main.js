@@ -11,6 +11,9 @@ const scorePlays = document.querySelector('.scoreplays');
 const humanEmoji = document.querySelector('.humanemoji');
 const pcEmoji = document.querySelector('.pcemoji');
 const mainText = document.querySelector('.maintext');
+const gifHapppy = document.querySelector('.gifhappy');
+const gifSad = document.querySelector('.gifsad');
+const gitTie = document.querySelector('.giftie');
 
 function hidePlay() {
     if (chooseButton.value !== 'none') {
@@ -124,10 +127,13 @@ function startOver() {
 
         if (humanScore.innerHTML > computerScore.innerHTML) {
             letsPlayMessage.innerHTML = '¡Enhorabuena! ¡Has ganado al ordenador!'
+            gifHapppy.classList.remove('hidden');
         } else if (computerScore.innerHTML > humanScore.innerHTML) {
             letsPlayMessage.innerHTML = 'Oh, vaya... El ordenador te ha ganado'
+            gifSad.classList.remove('hidden');
         } else {
             letsPlayMessage.innerHTML = 'Habéis empatado'
+            gitTie.classList.remove('hidden');
         }
     }
 
