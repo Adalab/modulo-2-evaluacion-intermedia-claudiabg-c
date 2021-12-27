@@ -14,6 +14,7 @@ const mainText = document.querySelector('.maintext');
 const gifHapppy = document.querySelector('.gifhappy');
 const gifSad = document.querySelector('.gifsad');
 const gifTie = document.querySelector('.giftie');
+const body = document.querySelector('.body');
 
 function hidePlay() {
     if (chooseButton.value !== 'none') {
@@ -141,6 +142,27 @@ function startOver() {
 
 function reloadPage() {
     location.reload();
+}
+
+const now = new Date();
+console.log(now.getMonth());
+
+if (now.getMonth() === 11) {
+    body.style.background = 'url(../img/cedar-6850925_960_720.webp)';
+    body.style.backgroundRepeat = 'no-repeat';
+    body.style.backgroundSize = 'cover';
+} else if (now.getMonth() === 1) {
+    body.style.background = 'url(../img/valentines-day-3984154_960_720.jpg)';
+    body.style.backgroundRepeat = 'no-repeat';
+    body.style.backgroundSize = 'cover';
+    body.style.color = 'rgb(252, 144, 211)';
+} else if (now.getMonth() === 6) {
+    body.style.background = 'url(../img/beach-832346_960_720.jpg)';
+    body.style.backgroundRepeat = 'no-repeat';
+    body.style.backgroundSize = 'cover';
+} else {
+    body.style.background = 'linear-gradient(to bottom, pink, seashell)';
+    body.style.color = 'rgb(252, 144, 211)';
 }
 
 chooseButton.addEventListener('change', hidePlay)
