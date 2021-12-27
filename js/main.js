@@ -145,21 +145,18 @@ function reloadPage() {
 }
 
 const now = new Date();
-console.log(now);
 
 if (now.getMonth() === 11) {
-    body.style.background = 'url(https://cdn.pixabay.com/photo/2021/12/06/16/38/cedar-6850925_960_720.jpg)';
-    body.style.backgroundRepeat = 'no-repeat';
+    body.style.background = 'url(https://cdn.pixabay.com/photo/2015/12/06/20/10/christmas-bauble-1079926_960_720.jpg)';
     body.style.backgroundSize = 'cover';
 } else if (now.getMonth() === 1) {
-    body.style.background = 'url(https://cdn.pixabay.com/photo/2019/02/08/22/28/valentines-day-3984154_960_720.jpg)';
-    body.style.backgroundRepeat = 'no-repeat';
+    body.style.background = 'url(https://cdn.pixabay.com/photo/2020/02/20/17/57/flower-4865379_960_720.png)';
     body.style.backgroundSize = 'cover';
     body.style.color = 'rgb(252, 144, 211)';
 } else if (now.getMonth() === 6) {
-    body.style.background = 'url(https://cdn.pixabay.com/photo/2016/04/25/10/17/starfishes-1351559_960_720.jpg)';
-    body.style.backgroundRepeat = 'no-repeat';
+    body.style.background = 'url(https://cdn.pixabay.com/photo/2021/07/10/01/11/monstera-6400359_960_720.jpg)';
     body.style.backgroundSize = 'cover';
+    body.style.color = 'lightgreen';
 } else {
     body.style.background = 'linear-gradient(to bottom, pink, seashell)';
     body.style.color = 'rgb(252, 144, 211)';
