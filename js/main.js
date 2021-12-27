@@ -145,7 +145,6 @@ function reloadPage() {
 }
 
 const now = new Date();
-console.log(now.getMonth());
 
 if (now.getMonth() === 11) {
     body.style.background = 'url(../img/cedar-6850925_960_720.webp)';
