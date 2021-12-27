@@ -13,7 +13,7 @@ const pcEmoji = document.querySelector('.pcemoji');
 const mainText = document.querySelector('.maintext');
 const gifHapppy = document.querySelector('.gifhappy');
 const gifSad = document.querySelector('.gifsad');
-const gitTie = document.querySelector('.giftie');
+const gifTie = document.querySelector('.giftie');
 
 function hidePlay() {
     if (chooseButton.value !== 'none') {
@@ -133,7 +133,7 @@ function startOver() {
             gifSad.classList.remove('hidden');
         } else {
             letsPlayMessage.innerHTML = 'Habéis empatado'
-            gitTie.classList.remove('hidden');
+            gifTie.classList.remove('hidden');
         }
     }
 
