@@ -5,9 +5,22 @@ const playButton = document.querySelector('.play');
 const letsPlayMessage = document.querySelector('.letsplay');
 const humanScore = document.querySelector('.scorehuman');
 const computerScore = document.querySelector('.scorecomputer');
-const selectNoValue = document.querySelector('.none')
+const playAgain = document.querySelector('.playagain');
+const counter = document.querySelector('.counter');
+const scorePlays = document.querySelector('.scoreplays');
+
+function hidePlay() {
+    if (chooseButton.value !== 'none') {
+        playButton.classList.remove('hidden')
+    }
+}
 
 function game() {
+    const userChoice = chooseButton.value;
+
+    counter.classList.remove('hidden');
+
+    scorePlays.innerHTML++;
 
     function getRandomNumber(max) {
         return Math.ceil(Math.random() * max);
@@ -16,7 +29,6 @@ function game() {
     let randomNum = getRandomNumber(9);
 
     function humanChoice() {
-        const userChoice = chooseButton.value;
 
         if (userChoice === 'none') {
             console.log('Selecciona una jugada para empezar');
@@ -30,7 +42,7 @@ function game() {
     }
 
     function computerChoice() {
-        if (chooseButton.value === 'none') {
+        if (userChoice === 'none') {
             console.log('Selecciona una jugada para empezar');
         } else if (randomNum <= 3) {
             console.log('El ordenador elige piedra');
@@ -53,7 +65,7 @@ function game() {
         computerScore.innerHTML++;
     }
 
-    if (chooseButton.value === '1') {
+    if (userChoice === '1') {
         if (randomNum <= 3) {
             messageButton('Empate');
         } else if (randomNum <= 6) {
@@ -63,7 +75,7 @@ function game() {
             messageButton('¡Has ganado!');
             addHumanScore();
         }
-    } else if (chooseButton.value === '2') {
+    } else if (userChoice === '2') {
         if (randomNum <= 3) {
             messageButton('¡Has ganado!');
             addHumanScore();
@@ -73,7 +85,7 @@ function game() {
             messageButton('¡Has perdido!');
             addComputerScore();
         }
-    } else if (chooseButton.value === '3') {
+    } else if (userChoice === '3') {
         if (randomNum <= 3) {
             messageButton('¡Has perdido!');
             addComputerScore();
@@ -94,7 +106,7 @@ function makeYourChoice(event) {
     game();
 }
 
-let numOfClicks = '';
+let numOfClicks = 1;
 
 function clicks(event) {
     if (event.currentTarget) {
@@ -104,8 +116,18 @@ function clicks(event) {
 
 function startOver() {
     if (numOfClicks > 10) {
-        location.reload();
+        playButton.classList.add('hidden')
+        playAgain.classList.remove('hidden')
+
+        if (humanScore.innerHTML > computerScore.innerHTML) {
+            letsPlayMessage.innerHTML = '¡Enhorabuena! ¡Has ganado al ordenador!'
+        } else if (computerScore.innerHTML > humanScore.innerHTML) {
+            letsPlayMessage.innerHTML = 'Oh, vaya... El ordenador te ha ganado.'
+        } else {
+            letsPlayMessage.innerHTML = 'Habéis empatado'
+        }
     }
+
 }
 
 function preventClickSelect() {
@@ -114,7 +136,13 @@ function preventClickSelect() {
     }
 }
 
+function reloadPage() {
+    location.reload();
+}
+
+chooseButton.addEventListener('change', hidePlay)
 playButton.addEventListener('click', preventClickSelect)
 playButton.addEventListener('click', makeYourChoice);
 playButton.addEventListener('click', clicks);
 playButton.addEventListener('click', startOver);
+playAgain.addEventListener('click', reloadPage);

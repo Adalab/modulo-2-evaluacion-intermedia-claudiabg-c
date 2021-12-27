@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piedra, papel o tijera</title>
-    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./style/main.css">
 </head>
 
 <body>
@@ -20,15 +20,19 @@
             <option value="2">Papel</option>
             <option value="3">Tijera</option>
         </select>
-        <input class="play" type="submit" value="Jugar" />
+        <input class="play hidden" type="submit" value="Jugar" />
     </form>
 
     <h2 class="letsplay">¡Vamos a jugar!</h2>
-    <p class="human">Humano: <span class="scorehuman">0</span></p>
-    <p class="coputer">Ordenador: <span class="scorecomputer">0</span></p>
+    <button class="playagain hidden">Juega otra vez</button>
+    <section class="counter hidden">
+        <p class="numberofplays">Contador de jugadas: <span class="scoreplays">0</span></p>
+        <p class="human">Humano: <span class="scorehuman">0</span></p>
+        <p class="coputer">Ordenador: <span class="scorecomputer">0</span></p>
+    </section>
 
 
-    <script src="./main.js"></script>
+    <script src="./js/main.js"></script>
 
 </body>
 
