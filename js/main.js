@@ -30,9 +30,7 @@ function game() {
 
     function humanChoice() {
 
-        if (userChoice === 'none') {
-            console.log('Selecciona una jugada para empezar');
-        } else if (userChoice === '1') {
+        if (userChoice === '1') {
             console.log('El humano escogió piedra');
         } else if (userChoice === '2') {
             console.log('El humano escogió papel');
@@ -42,9 +40,7 @@ function game() {
     }
 
     function computerChoice() {
-        if (userChoice === 'none') {
-            console.log('Selecciona una jugada para empezar');
-        } else if (randomNum <= 3) {
+        if (randomNum <= 3) {
             console.log('El ordenador elige piedra');
         } else if (randomNum <= 6) {
             console.log('El ordenador elige papel')
@@ -130,18 +126,11 @@ function startOver() {
 
 }
 
-function preventClickSelect() {
-    if (chooseButton.value === 'none') {
-        numOfClicks = '';
-    }
-}
-
 function reloadPage() {
     location.reload();
 }
 
 chooseButton.addEventListener('change', hidePlay)
-playButton.addEventListener('click', preventClickSelect)
 playButton.addEventListener('click', makeYourChoice);
 playButton.addEventListener('click', clicks);
 playButton.addEventListener('click', startOver);
